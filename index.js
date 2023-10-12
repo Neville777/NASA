@@ -19,3 +19,29 @@ const displayComments = ()=> {
     list += `</li>`;
     comments.innerHTML = list;
 };
+
+let currentDate = new Date().toISOString().split('')[0];
+
+fetchButton.addEventListener('click', fetchImage);
+fullScreenButton.addEventListener('click', toggleFullScreen);
+
+function fetchImage() {
+    const selectDate = datePicker.value;
+
+    if(selectDate) {
+        fetch( ` ${apiUrl}?api_key=${apiKey}&date=${selectDate} `)
+          .then(response => response.json())
+          .then((data) => {
+            displayImage(data);
+          }) 
+          .catch((error) => {
+            alert(`ERROR FETCHING IMAGE`,error);
+        });
+    } else {
+        alert("Please select a date.");
+    }
+}
+function displayImage(data) {
+    worldImage.scroll = data.url;
+    descriptionOne.textContent = data.explanation;
+}
