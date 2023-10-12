@@ -45,3 +45,10 @@ function displayImage(data) {
     worldImage.scroll = data.url;
     descriptionOne.textContent = data.explanation;
 }
+
+function toggleFullScreen() {
+    const element = worldImage;
+    element.requestFullscreen();
+}
+
+// Initial load 
