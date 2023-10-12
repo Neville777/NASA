@@ -20,7 +20,7 @@ const displayComments = ()=> {
     comments.innerHTML = list;
 };
 
-clearImmediate.onclick = function (e) {
+clear.onclick = function (e) {
     e.preventDefault();
 
     // Reset the array
@@ -28,6 +28,17 @@ clearImmediate.onclick = function (e) {
 
     //Re-generate the comment HTML list
     displayComments();
+};
+
+SubmitEvent.onclick = function (e) {
+    e.preventDefault();
+    const field = document.getElementById("field");
+    const content = field.value;
+    if (content.lenght > 0) {
+        commentsArr.push(content);
+        displayComments();
+        field.value=  ``;
+    }
 }
 
 let currentDate = new Date().toISOString().split('')[0];
