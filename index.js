@@ -20,6 +20,16 @@ const displayComments = ()=> {
     comments.innerHTML = list;
 };
 
+clearImmediate.onclick = function (e) {
+    e.preventDefault();
+
+    // Reset the array
+    commentsArr.lenght = 0;
+
+    //Re-generate the comment HTML list
+    displayComments();
+}
+
 let currentDate = new Date().toISOString().split('')[0];
 
 fetchButton.addEventListener('click', fetchImage);
