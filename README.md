@@ -1,6 +1,7 @@
 # NASA
 
 This web application fetches data of captivating images captured by NASA spacecracts in the depths of space and cameras back on earth, this has been made free and can be accessed throught the NASA API and displays it in my webpage.
+It has a wealth of information and can be a great place to learn more about heavenly bodies and can even inspire you to travel to the depths of space.
 
 It also shows a brief description of the image and the date the image was taken.
  
